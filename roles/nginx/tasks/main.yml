@@ -1,0 +1,13 @@
+---
+# tasks file for NginX installation
+
+- name: create NginX container
+  docker_container:
+    image: nginx:latest
+    name: nginx_container
+    ports: 
+      - "8080:80"
+    recreate: no
+    detach: true
+    expose:
+      - "8080"

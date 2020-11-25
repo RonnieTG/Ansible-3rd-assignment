@@ -1,0 +1,28 @@
+---
+- name: install docker | Ubuntu
+  hosts: ubuntu
+  remote_user: ubuntu
+  become: yes
+  roles: 
+  - docker
+
+- name: install docker | RedHat
+  hosts: redhat
+  remote_user: ec2-user
+  become: yes
+  roles:
+  - docker
+
+- name: install nginx | Ubuntu
+  hosts: ubuntu
+  remote_user: ubuntu
+  become: yes
+  roles:
+  - nginx
+
+- name: install nginx | RedHat
+  hosts: redhat
+  remote_user: ec2-user
+  become: yes
+  roles:
+  - nginx
